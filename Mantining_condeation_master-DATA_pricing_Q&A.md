@@ -1,4 +1,4 @@
-# 🧮 Maintaining Condition Master Data for Pricing — SAP SD
+#  Maintaining Condition Master Data for Pricing — SAP SD
 
 ### 📚 Overview
 
