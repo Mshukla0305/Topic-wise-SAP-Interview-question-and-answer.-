@@ -1,0 +1,128 @@
+# 🧮 Maintaining Condition Master Data for Pricing — SAP SD
+
+### 📚 Overview
+
+In SAP SD, **Condition Master Data** is used to store information related to pricing, discounts, surcharges, freight, and taxes.
+This data helps the system automatically calculate the correct price during a sales order process.
+
+---
+
+## 🎯 Lesson Objectives
+
+After completing this topic, you will be able to:
+
+* Understand what Condition Master Data is.
+* Learn how to maintain condition records in SAP.
+* Know how pricing is determined automatically.
+
+---
+
+## 🧠 Simple Explanation
+
+Condition Master Data includes:
+
+* **Prices** (for materials or services)
+* **Discounts / Surcharges**
+* **Freight Charges**
+* **Taxes**
+
+When you create or change a condition record, SAP uses **Condition Types** and **Access Sequences** to find and apply the correct value in a **Sales Order**.
+
+---
+
+## ⚙️ Common T-Codes
+
+| Action                   | Transaction Code       |
+| ------------------------ | ---------------------- |
+| Create Condition Record  | `VK11`                 |
+| Change Condition Record  | `VK12`                 |
+| Display Condition Record | `VK13`                 |
+| Mass Maintenance         | `VK31`, `VK32`, `VK33` |
+
+---
+
+## 💡 Steps to Create a Condition Record
+
+1. Go to T-code `VK11`
+2. Enter the **Condition Type** (Example: `PR00` for Base Price)
+3. Choose the **Key Combination** (Example: Customer/Material)
+4. Enter the **Price or Discount Value**
+5. Maintain **Validity Period** (Start and End Dates)
+6. Save ✅
+
+---
+
+## 🧩 Key Concepts
+
+* **Condition Type:** Defines what kind of pricing (price, discount, tax).
+* **Condition Record:** Stores actual values like ₹100 or 10% discount.
+* **Access Sequence:** Search path for finding the right condition record.
+* **Pricing Procedure:** A list of condition types arranged in a sequence to calculate the final price.
+* **Validity Period:** Time during which the condition is active.
+
+---
+
+## 💬 Interview Questions & Answers
+
+### 1. What is Condition Master Data?
+
+Condition Master Data stores information about prices, discounts, freight, and taxes used in pricing.
+
+### 2. What T-codes are used?
+
+`VK11`, `VK12`, `VK13` for create/change/display.
+
+### 3. What is a Condition Type?
+
+It defines the kind of pricing element — for example:
+
+* `PR00` for base price
+* `K007` for discount
+* `MWST` for tax
+
+### 4. What is the difference between Condition Type and Condition Record?
+
+* **Condition Type** = pricing rule.
+* **Condition Record** = actual value of that rule.
+
+### 5. What is Condition Technique?
+
+It’s the method SAP uses to find and apply the right price automatically.
+
+### 6. What is a Pricing Procedure?
+
+It’s a step-by-step sequence of all condition types used to calculate the final price.
+
+### 7. Can we have customer-specific pricing?
+
+Yes ✅, by using key combinations like Customer/Material.
+
+### 8. What is a Validity Period?
+
+Defines the time for which a condition record is valid.
+
+### 9. What are Access Sequences?
+
+It tells SAP where to search for condition records.
+
+### 10. What happens if no record is found?
+
+SAP shows price = **0**, and you must create a record using `VK11`.
+
+---
+
+## 🗾 Example
+
+**Condition Type:** `PR00`
+**Key Combination:** Customer/Material
+**Price:** ₹500
+**Validity:** 01.11.2025 to 31.12.2025
+
+Result → When you create a sales order for this customer & material, SAP automatically picks ₹500 as the base price.
+
+---
+
+## 🏁 Conclusion
+
+Maintaining Condition Master Data makes the pricing process **automatic, accurate, and efficient**.
+It’s one of the most important parts of SAP SD configuration and helps businesses save time and avoid pricing errors.
